@@ -98,6 +98,34 @@ export const authGoogle = () => {
     return createUserWithEmailAndPassword;
     };
 
+  export const signIn = (email, password) =>{
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user);
+      window.location.hash = "#/muro"
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // console.log(errorCode);
+      window.location.hash = "#/home";
+      const emailError = document.getElementById("invalidEmail");
+      const passwordError = document.getElementById("invalidPassword");
+      
+      if (errorCode === "auth/invalid-email") {
+        emailError.classList.toggle("hidden");
+      }
+      if (errorCode === "auth/wrong-password") {
+        passwordError.classList.toggle("hidden");
+      }
+
+
+    })
+    return signInWithEmailAndPassword;
+  }
+
     const emailVerification = () => {
       sendEmailVerification(auth.currentUser).then(() => {
         // console.log('correo enviado');
@@ -105,6 +133,19 @@ export const authGoogle = () => {
         // ...
       });
     };
+  
+   export const resetPassword = (email) =>{
+    sendPasswordResetEmail(auth, email)
+    .then(() => {
+      alert('Revisa tu correo y reiniciar tu contraseña');
+      // Password reset email sent!
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+   }
     
     export const logOut = () => {
       signOut(auth)

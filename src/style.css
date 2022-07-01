@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Spartan&display=swap");
 *{
   box-sizing: border-box ;
@@ -25,9 +24,12 @@ body{
 .bg-screen{
   background: linear-gradient(90deg, #b54e62, #dd7fa0);
   position: relative;
-  height: 600px;
+  height:auto; 
   width: 370px;
   box-shadow: 0px 0px 24px #b54e62;
+  display: grid;
+  align-items: center;
+  align-content: center;
 }
 .bg-screen-content{
   z-index: 1;
@@ -136,6 +138,7 @@ h2{
   background: none;
   padding: 10px;
   padding-left: 24px;
+  align-items: center;
   font-weight: 800;
   width: 100%;
   transition: .2s;
@@ -152,10 +155,10 @@ h2{
   letter-spacing: 1px;
 }
 
-.form-muro{
+.post-form {
     width: 280px; 
-    padding: 30px;
-    padding-top: 156px;
+    padding-top:1rem;
+    margin-left: 3rem;
   }
 
 .btn-delete-edit{
@@ -242,9 +245,10 @@ h2{
 .social-login {
   background: #36363610;
   position: absolute;
-  height: 60px;
+  height: 30px;
   width: 85%;
-  margin: 0 27px;
+  margin-top: 1rem;
+  /* margin: 0 27px; */
   text-align: center; 
   bottom:0 ;
   color:#f7f8f7;
@@ -262,6 +266,7 @@ h3{
   display: flex;
   align-items: center;
   justify-content: center;
+  /* margin-top: 1.5rem; */
 }
   .social-icon{ 
   padding: 10px 10px;
@@ -337,611 +342,75 @@ h3{
   text-decoration: none;
   color: #2f304c;
 }
-
-
-.overlay::after, .forgotPopUp::after{
-  /* position: absolute;  */
-  /* content: "";   */
-  z-index: -1; 
-  width: calc(100% + var(--border-width) * 2);
-  height: calc(100% + var(--border-width) * 2); 
-  background: linear-gradient(
-      60deg,
-      hsl(231, 100%, 50%),
-      hsl(273, 73%, 53%),
-      hsl(314, 100%, 50%),
-      hsl(12, 100%, 50%),
-      hsl(64, 100%, 50%),
-      hsl(89, 85%, 66%),
-      hsl(134, 100%, 50%),
-      hsl(179, 100%, 50%)
-    );
-     background-size: 300% 300%; 
-    background-position: 0 50%; 
-    border-radius: calc(2 * var(--border-width)); 
-    animation: moveGradient 10s alternate infinite; 
-}
-
-@keyframes moveGradient {
-  50% {
-    background-position: 100% 50%;
-  }
-} 
-=======
-@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
-body{
-display: inline-flex;
-font-size: clamp(16px, 5vw, 2.5em);
-margin:0;
-width: 100%;
-height: 100vh;
-padding: clamp(10px, 5vw, 5em);
-
-}
-
-.contenedor{
- flex-wrap: wrap;
- display: inline-block;
-}
-
-
-.logo.pokemon {
-border: 0;
-padding: 0;
-margin: 0;
-display:inline-block;
-justify-content: center;
-align-items: center;
-position:absolute;
-width:50%;
-height: 50px;;
-max-width: 100%;
-left: 3.125em;
-mix-blend-mode: hard-light;
-
-}
-
-img{
-max-width: 100%;
-max-height: 100%;
-}
-
-
-.nav{
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin: 0 auto;
-  background-color:#656D8D;
-  max-width: 100%;
-  height: 5em;
-  width: 100%;
-
-}
-
-.home{
-  color: white;
-  font-family: sans-serif;
-  text-decoration: none;
-  font-weight: bold;
-  line-height: 5em;
-  padding: 0 2.5em;
-}
-
-.nav-menu{
+.error-message{
   display: flex;
-  margin-right: 2.5em;
-}
-
-.nav-menu-link{
-  color:white;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  list-style: none;
-  font-family: sans-serif;
-  margin: 0 10px;
-  line-height: 50px;
-  color: white;
-  font-family: sans-serif;
-}
-
-.nav-menu-link:hover{
-  background-color: thistle;
-  transition: 0.5s;
-}
-
-section{
-  display:flex;
-  align-items: center;
-  width: 100%;
-  height: 120vh;
-  background-color: rgba(152, 185, 245, 0);
- 
-}
-
-.background{
-display: flex;
-align-items: center;
-background-image: url("./img/pikachu.background.png");
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-max-width: 100%;
-width: 100%;
-height: 100%;
-margin: 0;
-/*filter: opacity(.5);
-z-index: 1000;*/
-}
-
-
-
-.container-popup{
-box-sizing: border-box;
-background-color:transparent;
-font-family: sans-serif;
-display: flex;
-flex-direction: row;
-width: 100%;
-max-width: 100%;
-max-height: 100%;
-margin:-10px;
-}
-
-.popup{
- display:flex;
- /* formato rbga tranSparencia de 0.2 como un 20%*/
- background-color:rgba(0, 0, 0, 0.2);
- align-items: center;
- justify-content: center;
- position: fixed;
- top:0;
- left:0;
- right: 0;
- height:100%;
- width: 100%;
- visibility:visible;
-
-}
-
-.popup.hidden{
-visibility: hidden;
-}
-
-.close.hidden{
-  visibility: hidden;
-}
-
-button{
-  width: 60%;
-  height: 100%;
-  background-color: grey;
-}
-
-#aqui{
-  background-color:rgb(139, 137, 135);
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 2);
-  font-family:sans-serif;
-  max-width: 100%;
-  max-height: 50%;
-  font-weight: bold;
-  font-size: 18px;
-  margin-top: 10px;
-  text-align: center;
-  color:aliceblue;  
-  position: relative;
-  align-items: center;
-  left: -10px;
-  top: -10px;
-}
-#aqui:hover{
-  background: rgb(235, 219, 7);
-  transition: all 0.2s;
-  cursor: pointer;
- }
-
-.modal{
-  background-color: rgba(227, 237, 243, 0.9);
-  max-width: 100%;
-  max-height: 100%;
-  margin-top: -250px;
-  padding-left: 20px;
-  border-radius: 8px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  box-shadow: 6px 12px 0px rgba(70, 6, 6, 0.3);
-  text-align: center;
-  cursor: pointer;
-}
-  .input{
- width: 100%;
- height: 50px;
- line-height: 50px;
- margin-top: -25px;
- font-size: 18px;
- border-radius: 2px;
- font-style: italic;
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- text-align: center;
- cursor: pointer;
-  }
-
-.modal .cerrar-popup {
-  font-size: 16px;
-  line-height: 16px;
-  display: block; /* el enlace abarque todo el espacio disponible
-  y pueda colocar el texto OSEA LA X a la derecha con text alig*/
-  text-align: right;
-  padding-right: 10px;
-  color:#110303;
-  /*transition: .3s ease all;  de 3 seg con una funsion ease para todas
-  las propiedades*/
-  
-}
-.modal .cerrar-popup:hover {  
-  color:#000;
-}
-
-h1{
-display:flex;
-list-style:6.25em;
-text-align: center;
-text-decoration-style: double;
-font-weight: bold;
-padding: 10px 10px;
-font-size:20px; 
-margin:0;
- 
-}
-h3{
-  opacity: 0.5; 
-  font-size:18px ;
-}
-
-.pikachu{
-background-color:transparent;
-border: 0;
-border-radius: 30px;  
-animation: bouncel 8s alternate infinite ease-in;
-}
-@keyframes bouncel {
-80%{
-transform:translate(40%);
-} 
-100%{
-transform:traslate(40%);
-}
-}   
-
-/*base de pikachu en movimiento*/
-#jugamos{
-background-color:rgb(91, 91, 243);
-border-radius: 30px;
-font-family:sans-serif;
-font-style: normal;
-font-weight: 800;
-border: transparent;;
-pointer-events: none;
-font-size: 20px;
-position: absolute;
-left:80px;
-top: 1000px;
-width: 100px;
-height: 150px;
-cursor: pointer;
-}
-
-#root{
-  display: flex;
-  align-items:flex-start;
-  justify-content:left;
-  font-size: 30px;
-  font-family: sans-serif;
- /* position: relative;
-  margin-left:-100px;*/
-}
-
-aside{
-display: flex;
-width: 185px;
-height: 100%;
-}
-
-
-h2{
-display: none;
-position:flex;
-font-family:sans-serif;
-font-style: normal;
-font-weight: 800;
-font-size: 1.875em;
-line-height: 1.125em;
-color:bisque;
-border-style: rgba(34, 3, 3, 0.452);   
-}
-
-.pasos{
-display:block;
-position: flex;
-row-gap: 30px;
-flex-direction: column;
-align-items:center;
-padding-top: 210px;
-padding-right: 80px;
-margin: 0;
- 
-}
-
-#paso1{
-display: block;
-width: 100%;
-height: 220%;
-border-radius: 0.625em; 
-background: rgb(116, 87, 87);
-font-family:sans-serif;
-text-align:center;
-font-style: normal;
-font-size: 22px;
-padding: 8px;
-color:rgb(197, 202, 207);
-box-shadow: 8px 16px 0 rgb(70, 66, 66, 0.5);
-} 
-#paso2{
-display:block ;
-width: 100%;
-height: 200%;
-border-radius:0.625em ;
-background: rgb(116, 87, 87);
-font-family: sans-serif;
-font-style: normal;
-font-weight: 100;
-padding: 12px;
-margin-top: 30px;
-font-size: 22px;
-line-height: 1.5em;
-text-align:center;
-color:rgb(197, 202, 207);
-box-shadow: 8px 16px 0 rgb(70, 66, 66, 0.5);
-}  
-
-.footer{
-background-color:lightgray; 
-
-}
-
-.contenedor-imagenes{
-display: flex;
-justify-content: space-evenly;
-align-items:center;
-flex-direction:column;
-max-width: 100%;
-width: 100%;
-}
-
-.memorymatch{
-  display: flex;
-  width: 100%;
   flex-wrap: wrap;
-  justify-content: flex;
-  align-items:center;
 }
-.textocopyrigth{
-  font-size: 2em;
-  width: 60%;
-  text-align:center;
-  justify-content:flex-end;
-  }
->>>>>>> 9f6557ab02ee89b631939872c6c692d06dae47b1
 
-/* El contenedor padre de la tarjeta invertida:  
-(elimine la perspectiva si no desea el efecto 3D */
-.containerCard{
-    display:grid;
-    flex-direction:column ;
-    grid-template-columns: 145px 145px 145px 145px ;
-    grid-template-rows: 145px 145px 145px;
-    gap: 25px;
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    padding-left:400px ;
-    /*padding-left: 500px; pantalla a la derecha mas grande*/
-    perspective: 800px;
-}
-/* Este contenedor es necesario para colocar el back y front  */
-.card {
-  display:flex;
-  align-items: center;
-  justify-content: center;
+.error{
+  color: var(--error-color);
+  text-align: center;
   width: 100%;
-  height: 100%;
-  animation: initial 8s;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-  }
-
-/* Posiciona el front y el back */
-.front, .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-    pointer-events: none;
-    border-radius: 35px;
-    border-width: 2px;
-    border-style:double;
-    
-}
-/*  lado front  */
-.front {
-  background-color: #bbb;
-  color: black;
-  
+  display: inline-block;
 }
 
-/*  lado back */
-.back {
-  color: white;
-  transform: rotateY(180deg);
-  transition-duration: 0.5s;
-  transition: transform 0.5s;
-  background-color:rgb(50, 170, 245);
- }
-
-  /* FUNCION DE ANIMACION*/
-  .toggleCard {
-    transform: rotateY(180deg);
-    
-  }
-  
-  .toggleCard:hover{
-    border-radius:35px ;
-    box-shadow: 8px 16px 0 rgba(243, 238, 238, 0.5);
-  }
-
-  .usuario{
-   background-color:rgb(197, 202, 207, 0.8) ;
-   box-shadow: 0px 5px 16px rgba(10, 10, 10);
-   position: relative;
-   font-family:'Happy Monkey', cursive;
-   top:-120px;
-   left: -850px;
-   padding:8px;
-   text-align: center;
-   border-radius: 15px;
-   font-style:bold;
-   font-size: 40px;
-  }
-
-  .overlay{
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display:none;
-  }
-
-  .winPopUp {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 6);
-    text-align: center;
-    border-radius: 20px;
-    width: 100%;
-    max-width: 300px;
-    background: rgb(243, 217, 144);
-    margin: 10% auto;
+  .task-container{
+    margin: 1rem auto ;
+    /* display: flex; */
+    flex-wrap: wrap;
     align-items: center;
-    padding: 20px;
-    position: relative;
+    justify-content: center;
+    /* width: 45vh; */
   }
- #restart{
-  background-color:rgb(139, 137, 135);
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 2);
-  font-family:sans-serif;
-  max-width: 100%;
-  max-height: 150%;
-  font-weight: bold;
-  font-size: 18px;
-  margin-top: 10px;
-  color:aliceblue;  
-  position: relative;
-  left: -10px;
-  top: -10px;
- }
-
- #restart:hover{
-  background: rgb(235, 219, 7);
-  transition: all 0.2s;
-  cursor: pointer;
- }
-
-  .close-winPopUp {
-    position: absolute;
-    top: 0.3125em;
-    right: 0.9375rem;
+  .post{
+    display: grid;
+    grid-template-rows: repeat(4, 1rem);
+    row-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem ;
+    background-color:#f0bcce;
+    padding: 10px;
+    border-radius: 1rem;
+  }
+  .hidden {
+    display: none;
+  }
+  .post-open-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .post-open{
+    background-color:var(--primary);
+    margin-top: 2.5rem;
+    padding: 1rem;
+    color:white;
+    border:white 2px solid;
+    border-radius: .3rem; 
     cursor: pointer;
-    font-size: 1.5rem;
   }
-
-  .winPopUp a{
-    background: salmon;
-    color: white;
-    text-decoration: none;
-    padding: 0.375em 0.625em;
-    margin: 1.875em auto;
-    display: block;
-    width: 50%;
-  }
-
-  .winPopUp a:hover {
-    background: palevioletred;
-    transition: all 0.2s;
+  
+  
+.btn-like{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  margin: .3rem .5rem;
+  cursor: pointer;
+}
+.logOut-container{
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
 }
 
-  .imgWin{
-    width: 50%;
-    height: 50%;
+.logOut{
+ margin: 5rem 2rem 0 0;
+ font-weight: bold;
 
-  }
+}
 
-  @media screen and (max-width:1020px) {
-
-   .containerCard{ 
-
-    grid-template-columns: 200px 200px 200px   ;
-    grid-template-rows:200px 200px 200px 200px  ;
-    gap: 5px;
-    width: 80%;
-    height: 80%;
-  }
-  .card {
-    width: 80%;
-    height: 80%;
-    box-sizing: border-box;
-  }
-  }
-   
-  @media screen and (max-width: 576px) {
-    .containerCard{
-     grid-template-columns: 250px 250px 250px   ;
-      grid-template-rows:250px 250px 250px 250px  ;
-      gap: 15px;
-      width: 90%;
-      height: 90%;
-      padding-left:25em ;
-      /*padding-left: 500px; pantalla a la derecha mas grande*/
-      perspective: 62.5em;
-  }
-  .card {
-    width: 90%;
-    height: 90%;
-  }
-
-  .winPopUp {
-    height: 200%;
-    width:200%;
-    margin: 50% auto;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .overlay{
-    height: 200%;
-    width:200%;
-    margin: 50% auto;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  }
