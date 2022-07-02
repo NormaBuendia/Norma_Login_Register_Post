@@ -203,7 +203,7 @@ export const muro = () => {
     const title = divMuro.querySelector('#title').value
    const description = divMuro.querySelector('#content').value
    const postBtn = divMuro.querySelector('#btn-form');
-  //  window.scrollTo({ top: 0, behavior: 'smooth' }) 
+   window.scrollTo({ top: 0, behavior: 'smooth' }) 
    // sino estas editando
       if(!editStatus){
           //entonces quiero que guardes

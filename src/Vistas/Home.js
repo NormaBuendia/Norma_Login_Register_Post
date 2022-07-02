@@ -50,7 +50,7 @@ export const Home = () => {
                   <input type="ingresa tu email" placeholder="ingresa tu email" 
                     name ="ingresa tu email" id="email">
                   <button class="login-submit">
-                    <a href="">Enviar</a>
+                    <a id = 'emailId' href="">Enviar</a>
                     <a href="" class="fas fa-chevron-right"></a>
                   </button>      
                 </div>
@@ -109,14 +109,14 @@ export const Home = () => {
     forgotPopUp.style.display = "none";
   });
 
-  divHome.querySelector('#resetPassword').addEventListener('submit', (e) => {
+
+});
+  divHome.querySelector('#resetPassword').addEventListener('click', (e) => {
   e.preventDefault();
-  const emailInput = document.querySelector('#email').value;
-  resetPassword(emailInput);
+  const email= document.querySelector('#emailId').value;
+  resetPassword(email);
 
 });
-});
-
 
   return divHome;
 

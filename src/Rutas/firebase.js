@@ -128,7 +128,7 @@ export const authGoogle = () => {
 
     const emailVerification = () => {
       sendEmailVerification(auth.currentUser).then(() => {
-        // console.log('correo enviado');
+        console.log('correo enviado');
         // Email verification sent!
         // ...
       });
@@ -136,8 +136,11 @@ export const authGoogle = () => {
   
    export const resetPassword = (email) =>{
     sendPasswordResetEmail(auth, email)
-    .then(() => {
+    .then((emailInput) => {
+      const forgotEmail =emailInput.forgotEmail
       alert('Revisa tu correo y reiniciar tu contraseña');
+      window.location.hash = "#/home";
+      console.log(forgotEmail, 'olaaaa')
       // Password reset email sent!
     })
     .catch((error) => {
@@ -151,6 +154,7 @@ export const authGoogle = () => {
       signOut(auth)
         .then(() => {
           alert("saliste");
+         
           window.location.hash = "#/home";
         })
         .catch((error) => {
