@@ -136,11 +136,11 @@ export const authGoogle = () => {
   
    export const resetPassword = (email) =>{
     sendPasswordResetEmail(auth, email)
-    .then((emailInput) => {
-      const forgotEmail =emailInput.forgotEmail
-      alert('Revisa tu correo y reiniciar tu contraseña');
+    .then(() => {
+      
+      alert('Revisa tu correo y busca en los correos no deseados y cambia tu contraseña');
       window.location.hash = "#/home";
-      console.log(forgotEmail, 'olaaaa')
+    
       // Password reset email sent!
     })
     .catch((error) => {

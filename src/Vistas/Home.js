@@ -45,15 +45,19 @@ export const Home = () => {
                   <h3>OLVIDASTE TU CONTRASEÑA</h3>
                   <h4>Enviaremos un email a tu correo para recuperar contraseña</h4>
                 </div>
+                
                 <div class="login-input">
+                <form id="recoverPass-form">
                   <label for ="ingresa tu email">Ingresa tu email</label>
                   <input type="ingresa tu email" placeholder="ingresa tu email" 
-                    name ="ingresa tu email" id="email">
-                  <button class="login-submit">
-                    <a id = 'emailId' href="">Enviar</a>
+                    name ="ingresa tu email" id="emailId">
+                  <button  class="login-submit">
+                    <a  id="emailButton" href="">Enviar</a>
                     <a href="" class="fas fa-chevron-right"></a>
-                  </button>      
+                  </button>
+                </form>      
                 </div>
+                
               </div>
             </div>
         </form>
@@ -87,11 +91,13 @@ export const Home = () => {
 
 
   divHome.querySelector('#resetPassword').addEventListener('click', () => {
+       
   const overlay = document.querySelector(".overlay");
   //se busca y selecciona el elemento con clase overlay
   const forgotPopUp = document.querySelector(".forgotPopUp");
   //se selecciona el elemento con id
-  const button = document.getElementById("email");
+  const button = document.getElementById("emailButton");
+    
   // se busca selecciona al elemento con la clase
   const close = document.querySelector(".close-forgotPopUp");
   
@@ -102,21 +108,29 @@ export const Home = () => {
     button.addEventListener('click', () => {
       forgotPopUp.style.display = "none";
       overlay.style.display = "none";
+    
   });
   close.addEventListener('click', () => {
 
     overlay.style.display = "none";
     forgotPopUp.style.display = "none";
   });
-
-
+  
 });
-  divHome.querySelector('#resetPassword').addEventListener('click', (e) => {
-  e.preventDefault();
-  const email= document.querySelector('#emailId').value;
-  resetPassword(email);
 
-});
+// divHome.querySelector('#resetPassword').addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   const email= document.querySelector('#emailId').value;
+//   resetPassword(email.value);
+
+// });
+// creo un evento click, creo la constante con el id, y su valor
+divHome.addEventListener('click', (e) =>{
+e.preventDefault();
+const email= document.querySelector("#emailId").value;
+resetPassword(email)
+})
+
 
   return divHome;
 
