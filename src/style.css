@@ -416,3 +416,6 @@ h3{
 
 }
 
+#title, #content {
+border-radius: 8px;
+}
